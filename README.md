@@ -1,8 +1,10 @@
 # posts_sample
 
-A new Flutter project.
+Practice app using Flutter.
 
-## Getting Started
+Features to implement:
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+* ~~Post list~~
+* ~~Fetching from API~~
+* Comment section
+* Picture section
