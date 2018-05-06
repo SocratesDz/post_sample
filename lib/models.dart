@@ -15,11 +15,21 @@ class Post {
   }
 }
 
-/*
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+class Comment {
+  final int postId;
+  final int id;
+  final String name;
+  final String email;
+  final String body;
+
+  Comment({this.postId, this.id, this.name, this.email, this.body});
+
+  factory Comment.fromJson(Map<String, dynamic> json) {
+    return new Comment(
+        postId: json['postId'],
+        id: json['id'],
+        name: json['name'],
+        email: json['email'],
+        body: json['body']);
+  }
 }
-*/

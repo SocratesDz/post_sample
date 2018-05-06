@@ -4,7 +4,8 @@ Practice app using Flutter.
 
 Features to implement:
 
-* ~~Post list~~
-* ~~Fetching from API~~
-* Comment section
-* Picture section
+* [x] Post list
+* [x] Fetching from API
+* [x] Comment section
+* [ ] Picture section
+* [ ] Picture slider

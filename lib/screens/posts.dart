@@ -1,11 +1,7 @@
-import 'dart:async';
-import 'dart:convert';
-import '../models.dart';
-import 'post_detail.dart';
-import '../api.dart';
-
+import 'package:posts_sample/models.dart';
+import 'package:posts_sample/screens/post_detail.dart';
+import 'package:posts_sample/api.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class PostsPage extends StatefulWidget {
   PostsPage({Key key}) : super(key: key);
@@ -20,6 +16,8 @@ class _PostsPageState extends State<PostsPage> {
         itemBuilder: (context, position) {
           final post = posts[position];
           return ListTile(
+            subtitle: Text(post.body,
+                maxLines: 1, style: Theme.of(context).textTheme.caption),
             title: Text(post.title),
             onTap: () => Navigator.push(
                 context,
@@ -34,7 +32,6 @@ class _PostsPageState extends State<PostsPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(
           title: Text("Posts"),
@@ -43,7 +40,7 @@ class _PostsPageState extends State<PostsPage> {
           future: Api.fetchPosts(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              final posts = (snapshot.data as List<Post>);
+              final posts = snapshot.data;
               return itemList(posts);
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
