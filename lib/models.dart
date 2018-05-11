@@ -33,3 +33,22 @@ class Comment {
         body: json['body']);
   }
 }
+
+class Picture {
+  final int albumId;
+  final int id;
+  final String title;
+  final String url;
+  final String thumbnailUrl;
+
+  Picture({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
+
+  factory Picture.fromJson(Map<String, dynamic> json) {
+    return new Picture(
+        albumId: json['albumId'],
+        id: json['id'],
+        title: json['title'],
+        url: json['url'],
+        thumbnailUrl: json['thumbnailUrl']);
+  }
+}
