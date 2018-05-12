@@ -16,8 +16,10 @@ class _PostsPageState extends State<PostsPage> {
         itemBuilder: (context, position) {
           final post = posts[position];
           return ListTile(
-            subtitle: Text(post.body,
-                maxLines: 1, style: Theme.of(context).textTheme.caption),
+            subtitle: Text(
+                post.body,
+                maxLines: 1,
+                style: Theme.of(context).textTheme.caption),
             title: Text(post.title),
             onTap: () => Navigator.push(
                 context,

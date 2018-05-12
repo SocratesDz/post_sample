@@ -22,4 +22,13 @@ class Api {
         .map((comment) => Comment.fromJson(comment as Map<String, dynamic>))
         .toList();
   }
+
+  static Future<List<Picture>> fetchPictures() async {
+    final response = await http.get(baseUrl + "/photos");
+    final responseJson = json.decode(response.body);
+
+    return (responseJson as List)
+        .map((photo) => Picture.fromJson(photo as Map<String, dynamic>))
+        .toList();
+  }
 }
