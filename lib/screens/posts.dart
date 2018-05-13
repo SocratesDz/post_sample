@@ -23,10 +23,16 @@ class _PostsPageState extends State<PostsPage> {
             title: Text(post.title),
             onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => PostDetailPage(
-                          post: post,
-                        ))),
+                PageRouteBuilder(
+                    pageBuilder: (context, _, __) {
+                      return PostDetailPage(
+                        post: post,
+                      );
+                    },
+                    transitionsBuilder: (_, animation, __, child) {
+                      return new FadeTransition(opacity: animation, child: child);
+                    }
+                )),
           );
         },
         itemCount: posts.length);
