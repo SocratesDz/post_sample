@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/posts.dart';
+import 'package:posts_sample/screens/tabs.dart';
 
 void main() => runApp(new MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PostsPage(),
+      home: TabsWidget(),
     );
   }
 }

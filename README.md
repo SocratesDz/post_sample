@@ -7,5 +7,5 @@ Features to implement:
 * [x] Post list
 * [x] Fetching from API
 * [x] Comment section
-* [ ] Picture section
-* [ ] Picture slider
+* [x] Picture section
+* [x] Picture slider
