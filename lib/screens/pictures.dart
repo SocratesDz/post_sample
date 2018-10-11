@@ -38,9 +38,15 @@ class _PicturesPageState extends State<PicturesPage> {
         MapEntry(index, GridTile(
     child: new InkWell(
       onTap: () => Navigator.push(context,
-          MaterialPageRoute(
-              builder: (context) =>
-              PictureSlider(pictures: pictures, indexPicture: index))),
+          PageRouteBuilder(
+            pageBuilder: (context, _, __) {
+              return PictureSliderPage(pictures: pictures, indexPicture: index);
+            },
+            transitionsBuilder: (_, animation, __, child) {
+              return new FadeTransition(opacity: animation, child: child);
+            }
+          ),
+      ),
       child: CachedNetworkImage(
         placeholder: Center(
             heightFactor: 0.5,

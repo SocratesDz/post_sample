@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:posts_sample/models.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class PictureSlider extends StatefulWidget {
+class PictureSliderPage extends StatefulWidget {
   final List<Picture> pictures;
   final int indexPicture;
 
-  PictureSlider({List<Picture> pictures, int indexPicture}) :
+  PictureSliderPage({List<Picture> pictures, int indexPicture}) :
         pictures = pictures, indexPicture = indexPicture;
 
   @override
-  State createState() => _PictureSliderPage();
+  State createState() => _PictureSliderPageState();
 }
 
-class _PictureSliderPage extends State<PictureSlider> {
+class _PictureSliderPageState extends State<PictureSliderPage> {
 
   PageController controller;
 
