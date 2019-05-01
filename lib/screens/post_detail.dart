@@ -15,7 +15,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
@@ -87,7 +86,6 @@ class CommentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
         decoration: BoxDecoration(
             border: Border(bottom: BorderSide(width: 1.0, color: Colors.grey))),

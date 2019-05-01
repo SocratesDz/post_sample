@@ -1,12 +1,12 @@
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
-import 'models.dart';
+import 'package:posts_sample/models.dart';
 
 class Api {
   static final String baseUrl = "https://jsonplaceholder.typicode.com";
-  static Future<List<Post>> fetchPosts() async {
-    final response = await http.get(baseUrl + "/posts");
+  static Future<List<Post>> fetchPosts({int start, int limit}) async {
+    final response = await http.get(baseUrl + "/posts?_start=$start&_limit=$limit");
     final responseJson = json.decode(response.body);
 
     return (responseJson as List)

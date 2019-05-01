@@ -37,7 +37,7 @@ class _PictureSliderPageState extends State<PictureSliderPage> {
         itemCount: this.widget.pictures.length,
         itemBuilder: (context, index) {
           return CachedNetworkImage(
-            placeholder: Center(
+            placeholder: (context, url) => Center(
                 child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.white))),
             imageUrl: this.widget.pictures[index].url,

@@ -48,7 +48,7 @@ class _PicturesPageState extends State<PicturesPage> {
           ),
       ),
       child: CachedNetworkImage(
-        placeholder: Center(
+        placeholder: (context, url) => Center(
             heightFactor: 0.5,
             widthFactor: 0.5,
             child: CircularProgressIndicator()),
